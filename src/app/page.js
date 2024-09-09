@@ -1,5 +1,6 @@
+"use client"; // Indicates this is a Client Component
 // import Image from "next/image";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/app/components/Navbar";
 
 export default function Home() {
   return (

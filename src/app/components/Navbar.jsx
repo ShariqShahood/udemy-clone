@@ -4,10 +4,14 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { FaSearch, FaUserCircle } from 'react-icons/fa';
-
+import { auth } from '@/firebaseconfig';
+import { signOut } from 'firebase/auth';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const handleLogout = () => {
+    signOut(auth);
+    router.push('/login');
+  };
   return (
     <header className="bg-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -21,13 +25,13 @@ const Navbar = () => {
           <Link href="/courses" className="text-gray-700 hover:text-blue-600">
             Courses
           </Link>
-          <Link href="/categories" className="text-gray-700 hover:text-blue-600">
-            Categories
+          <Link href="/dashboard" className="text-gray-700 hover:text-blue-600">
+            Teaacher Dashboard
           </Link>
           <Link href="/instructors" className="text-gray-700 hover:text-blue-600">
             Instructors
           </Link>
-          <Link href="/about" className="text-gray-700 hover:text-blue-600">
+          <Link href="/About" className="text-gray-700 hover:text-blue-600">
             About
           </Link>
           {/* Search Bar */}
@@ -54,10 +58,11 @@ const Navbar = () => {
           <Link href="/login" className="text-gray-700 hover:text-blue-600 hidden md:block">
             Login
           </Link>
-          <Link href="/register" className="text-gray-700 hover:text-blue-600 hidden md:block">
+          <Link href="/signup" className="text-gray-700 hover:text-blue-600 hidden md:block">
             Register
           </Link>
           <FaUserCircle className="text-2xl text-gray-700 hover:text-blue-600 cursor-pointer" />
+          <button onClick={handleLogout} className="bg-indigo-500 text-white px-4 py-2 rounded-lg">LogOut</button>
         </div>
       </div>
 
@@ -65,25 +70,27 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-md">
           <nav className="flex flex-col space-y-2 p-4">
+            
             <Link href="/courses" className="text-gray-700 hover:text-blue-600">
               Courses
             </Link>
-            <Link href="/categories" className="text-gray-700 hover:text-blue-600">
-              Categories
+            <Link href="/dashboard" className="text-gray-700 hover:text-blue-600">
+              Teacher Dashboard
             </Link>
             <Link href="/instructors" className="text-gray-700 hover:text-blue-600">
               Instructors
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600">
+            <Link href="/About" className="text-gray-700 hover:text-blue-600">
               About
             </Link>
             <div className="flex flex-col space-y-2 pt-4">
               <Link href="/login" className="text-gray-700 hover:text-blue-600">
                 Login
               </Link>
-              <Link href="/register" className="text-gray-700 hover:text-blue-600">
+              <Link href="/signup" className="text-gray-700 hover:text-blue-600">
                 Register
               </Link>
+              <button onClick={handleLogout} className="bg-indigo-500 text-white px-4 py-2 rounded-lg">LogOut</button>
             </div>
           </nav>
         </div>
