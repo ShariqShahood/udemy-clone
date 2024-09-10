@@ -6,7 +6,7 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
 import Swal from "sweetalert2";
-
+import Link from "next/link";
 const AdminSignup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -70,12 +70,12 @@ const AdminSignup = () => {
         Signup
       </button>
       <div class="text-center mt-4">
-        <a
+        <Link
           href="/login"
           class="text-indigo-500 hover:underline hover:text-indigo-600 transition duration-200"
         >
           Already have an account?
-        </a>
+        </Link>
       </div>
     </form>
   </div>

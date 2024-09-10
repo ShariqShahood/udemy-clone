@@ -6,6 +6,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import Navbar from "../components/Navbar";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
 const AdminLogin = () => {
     const [email, setEmail] = useState('');
@@ -71,12 +72,12 @@ const AdminLogin = () => {
         Signup
       </button>
       <div class="text-center mt-4">
-        <a
+        <Link
           href="/signup"
           class="text-indigo-500 hover:underline hover:text-indigo-600 transition duration-200"
         >
           Create One! SignUp 
-        </a>
+        </Link>
       </div>
     </form>
   </div>

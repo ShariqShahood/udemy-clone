@@ -57,10 +57,10 @@ const About = () => {
         </p>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="flex items-center justify-center p-6 bg-white shadow-lg rounded-lg transform hover:scale-105 transition duration-500 ease-in-out">
-            <img src="../About/mission1.jpg" alt="Mission" className="w-48 h-48" />
+            <img src="/images/mission1.jpg" alt="Mission" className="w-100 " />
           </div>
           <div className="flex items-center justify-center p-6 bg-white shadow-lg rounded-lg transform hover:scale-105 transition duration-500 ease-in-out">
-            <img src="../About/mission2.jpg" alt="Mission" className="w-48 h-48" />
+            <img src="/images/mission2.jpg" alt="Mission" className="w-100" />
           </div>
         </div>
       </section>
@@ -72,10 +72,10 @@ const About = () => {
           Our dedicated team of educators and developers is committed to providing the best learning experience.
         </p>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
-          {['John Doe', 'Shariq Shahood', 'Alice Johnson'].map((member, index) => (
+          {['Sameer Khan', 'Shariq Shahood', 'Adnan'].map((member, index) => (
             <div key={index} className="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-500 ease-in-out">
               {/* <img src={`/images/team${index + 1}.jpg`} alt={member} className="w-full h-48 object-cover rounded-md" /> */}
-              <img src={`/images/team${index + 1}.jpg`} alt={member} className="w-full h-48 object-cover rounded-md" />
+              <img src={`/images/team${index + 1}.jpeg`} alt={member} className="w-full h-48 object-cover rounded-md" />
               <h3 className="mt-4 text-2xl font-semibold text-center">{member}</h3>
               <p className="mt-2 text-center text-gray-600">FrontEnd Developer Developer</p>
             </div>
